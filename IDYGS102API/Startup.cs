@@ -33,6 +33,7 @@ namespace IDYGS102API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "IDYGS102API", Version = "v1" });
+
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -48,11 +49,13 @@ namespace IDYGS102API
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "IDYGS102API v1"));
+
             }
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            
 
             app.UseAuthorization();
 
